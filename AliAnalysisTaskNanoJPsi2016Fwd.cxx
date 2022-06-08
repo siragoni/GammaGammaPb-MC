@@ -173,7 +173,7 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserCreateOutputObjects()
   //output tree
   ////////////////////////////////////////
   fAnaTree = new TTree("fOutputTree", "fOutputTree");
-  // fAnaTree ->Branch("fRunNum", &fRunNum, "fRunNum/I");
+  fAnaTree ->Branch("fRunNum", &fRunNum, "fRunNum/I");
   // fAnaTree ->Branch("fL0inputs", &fL0inputs, "fL0inputs/i");
   // fAnaTree ->Branch("fAnaType", &fAnaType, "fAnaType/I");
   // fAnaTree ->Branch("fGoodPosTrk", &fGoodPosTrk, "fGoodPosTrk/I");
@@ -186,32 +186,32 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserCreateOutputObjects()
 
 
 
-  // fAnaTree ->Branch("fV0ADecision",   &fV0ADecision,   "fV0ADecision/I");
-  // fAnaTree ->Branch("fV0CDecision",   &fV0CDecision,   "fV0CDecision/I");
-  // fAnaTree ->Branch("fADADecision",   &fADADecision,   "fADADecision/I");
-  // fAnaTree ->Branch("fADCDecision",   &fADCDecision,   "fADCDecision/I");
-  // fAnaTree ->Branch("fV0TotalNCells", &fV0TotalNCells, "fV0TotalNCells/I");
+  fAnaTree ->Branch("fV0ADecision",   &fV0ADecision,   "fV0ADecision/I");
+  fAnaTree ->Branch("fV0CDecision",   &fV0CDecision,   "fV0CDecision/I");
+  fAnaTree ->Branch("fADADecision",   &fADADecision,   "fADADecision/I");
+  fAnaTree ->Branch("fADCDecision",   &fADCDecision,   "fADCDecision/I");
+  fAnaTree ->Branch("fV0TotalNCells", &fV0TotalNCells, "fV0TotalNCells/I");
 
 
 
   fAnaTree ->Branch("fTrkPt1", &fTrkPt1, "fTrkPt1/D");
   fAnaTree ->Branch("fTrkPt2", &fTrkPt2, "fTrkPt2/D");
-  // fAnaTree ->Branch("fTrkEta1", &fTrkEta1, "fTrkEta1/D");
-  // fAnaTree ->Branch("fTrkEta2", &fTrkEta2, "fTrkEta2/D");
-  // fAnaTree ->Branch("fTrkPhi1", &fTrkPhi1, "fTrkPhi1/D");
-  // fAnaTree ->Branch("fTrkPhi2", &fTrkPhi2, "fTrkPhi2/D");
-  // fAnaTree ->Branch("fTrkQ1", &fTrkQ1, "fTrkQ1/D");
-  // fAnaTree ->Branch("fTrkQ2", &fTrkQ2, "fTrkQ2/D");
+  fAnaTree ->Branch("fTrkEta1", &fTrkEta1, "fTrkEta1/D");
+  fAnaTree ->Branch("fTrkEta2", &fTrkEta2, "fTrkEta2/D");
+  fAnaTree ->Branch("fTrkPhi1", &fTrkPhi1, "fTrkPhi1/D");
+  fAnaTree ->Branch("fTrkPhi2", &fTrkPhi2, "fTrkPhi2/D");
+  fAnaTree ->Branch("fTrkQ1", &fTrkQ1, "fTrkQ1/D");
+  fAnaTree ->Branch("fTrkQ2", &fTrkQ2, "fTrkQ2/D");
   // fAnaTree ->Branch("fTrkRabs1", &fTrkRabs1, "fTrkRabs1/D");
   // fAnaTree ->Branch("fTrkRabs2", &fTrkRabs2, "fTrkRabs2/D");
   fAnaTree ->Branch("fCosThetaHE", &fCosThetaHE, "fCosThetaHE/D");
   fAnaTree ->Branch("fCosThetaCS", &fCosThetaCS, "fCosThetaCS/D");
   fAnaTree ->Branch("fPhiHE", &fPhiHE, "fPhiHE/D");
   fAnaTree ->Branch("fPhiCS", &fPhiCS, "fPhiCS/D");
-  fAnaTree ->Branch("fTildePhiHEpos", &fTildePhiHEpos, "fTildePhiHEpos/D");
-  fAnaTree ->Branch("fTildePhiHEneg", &fTildePhiHEneg, "fTildePhiHEneg/D");
-  fAnaTree ->Branch("fTildePhiCSpos", &fTildePhiCSpos, "fTildePhiCSpos/D");
-  fAnaTree ->Branch("fTildePhiCSneg", &fTildePhiCSneg, "fTildePhiCSneg/D");
+  // fAnaTree ->Branch("fTildePhiHEpos", &fTildePhiHEpos, "fTildePhiHEpos/D");
+  // fAnaTree ->Branch("fTildePhiHEneg", &fTildePhiHEneg, "fTildePhiHEneg/D");
+  // fAnaTree ->Branch("fTildePhiCSpos", &fTildePhiCSpos, "fTildePhiCSpos/D");
+  // fAnaTree ->Branch("fTildePhiCSneg", &fTildePhiCSneg, "fTildePhiCSneg/D");
 
   // not needed in MC
   /*
@@ -276,7 +276,7 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserCreateOutputObjects()
   ////////////////////////////////////////
 
   fAnaTreeMC = new TTree("fOutputTreeMC", "fOutputTreeMC");
-  // // fAnaTreeMC ->Branch("fRunNum", &fRunNum, "fRunNum/I");
+  fAnaTreeMC ->Branch("fRunNum", &fRunNum, "fRunNum/I");
   fAnaTreeMC ->Branch("fMCTrkTrkPt", &fMCTrkTrkPt, "fMCTrkTrkPt/D");
   // // fAnaTreeMC ->Branch("fMCTrkTrkPhi", &fMCTrkTrkPhi, "fMCTrkTrkPhi/D");
   fAnaTreeMC ->Branch("fMCTrkTrkY", &fMCTrkTrkY, "fMCTrkTrkY/D");
@@ -286,18 +286,18 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserCreateOutputObjects()
   fAnaTreeMC ->Branch("fMCCosThetaCS", &fMCCosThetaCS, "fMCCosThetaCS/D");
   fAnaTreeMC ->Branch("fMCPhiHE", &fMCPhiHE, "fMCPhiHE/D");
   fAnaTreeMC ->Branch("fMCPhiCS", &fMCPhiCS, "fMCPhiCS/D");
-  fAnaTreeMC ->Branch("fMCTildePhiHEpos", &fMCTildePhiHEpos, "fMCTildePhiHEpos/D");
-  fAnaTreeMC ->Branch("fMCTildePhiHEneg", &fMCTildePhiHEneg, "fMCTildePhiHEneg/D");
-  fAnaTreeMC ->Branch("fMCTildePhiCSpos", &fMCTildePhiCSpos, "fMCTildePhiCSpos/D");
-  fAnaTreeMC ->Branch("fMCTildePhiCSneg", &fMCTildePhiCSneg, "fMCTildePhiCSneg/D");
-  // // fAnaTreeMC ->Branch("fMCTrkPt1", &fMCTrkPt1, "fMCTrkPt1/D");
-  // // fAnaTreeMC ->Branch("fMCTrkPt2", &fMCTrkPt2, "fMCTrkPt2/D");
-  // // fAnaTreeMC ->Branch("fMCTrkEta1", &fMCTrkEta1, "fMCTrkEta1/D");
-  // // fAnaTreeMC ->Branch("fMCTrkEta2", &fMCTrkEta2, "fMCTrkEta2/D");
-  // // fAnaTreeMC ->Branch("fMCTrkPhi1", &fMCTrkPhi1, "fMCTrkPhi1/D");
-  // // fAnaTreeMC ->Branch("fMCTrkPhi2", &fMCTrkPhi2, "fMCTrkPhi2/D");
-  // // fAnaTreeMC ->Branch("fMCTrkQ1", &fMCTrkQ1, "fMCTrkQ1/I");
-  // // fAnaTreeMC ->Branch("fMCTrkQ2", &fMCTrkQ2, "fMCTrkQ2/I");
+  // fAnaTreeMC ->Branch("fMCTildePhiHEpos", &fMCTildePhiHEpos, "fMCTildePhiHEpos/D");
+  // fAnaTreeMC ->Branch("fMCTildePhiHEneg", &fMCTildePhiHEneg, "fMCTildePhiHEneg/D");
+  // fAnaTreeMC ->Branch("fMCTildePhiCSpos", &fMCTildePhiCSpos, "fMCTildePhiCSpos/D");
+  // fAnaTreeMC ->Branch("fMCTildePhiCSneg", &fMCTildePhiCSneg, "fMCTildePhiCSneg/D");
+  fAnaTreeMC ->Branch("fMCTrkPt1", &fMCTrkPt1, "fMCTrkPt1/D");
+  fAnaTreeMC ->Branch("fMCTrkPt2", &fMCTrkPt2, "fMCTrkPt2/D");
+  fAnaTreeMC ->Branch("fMCTrkEta1", &fMCTrkEta1, "fMCTrkEta1/D");
+  fAnaTreeMC ->Branch("fMCTrkEta2", &fMCTrkEta2, "fMCTrkEta2/D");
+  fAnaTreeMC ->Branch("fMCTrkPhi1", &fMCTrkPhi1, "fMCTrkPhi1/D");
+  fAnaTreeMC ->Branch("fMCTrkPhi2", &fMCTrkPhi2, "fMCTrkPhi2/D");
+  fAnaTreeMC ->Branch("fMCTrkQ1", &fMCTrkQ1, "fMCTrkQ1/I");
+  fAnaTreeMC ->Branch("fMCTrkQ2", &fMCTrkQ2, "fMCTrkQ2/I");
 
   // post data
   PostData(3, fAnaTreeMC);
@@ -449,6 +449,12 @@ void AliAnalysisTaskNanoJPsi2016Fwd::GetMCInfo()
     fMCTildePhiHEneg  = -999;
     fMCTildePhiCSpos  = -999;
     fMCTildePhiCSneg  = -999;
+    fMCTrkEta1 = -10;
+    fMCTrkEta2 = -10;
+    fMCTrkPhi1 = -10;
+    fMCTrkPhi2 = -10;
+    fMCTrkQ1 = -10;
+    fMCTrkQ2 = -10;
     fAnaTreeMC->Fill();
 
     PostData(3, fAnaTreeMC);
@@ -472,6 +478,12 @@ void AliAnalysisTaskNanoJPsi2016Fwd::GetMCInfo()
       fMCTildePhiHEneg  = -999;
       fMCTildePhiCSpos  = -999;
       fMCTildePhiCSneg  = -999;
+      fMCTrkEta1 = -10;
+      fMCTrkEta2 = -10;
+      fMCTrkPhi1 = -10;
+      fMCTrkPhi2 = -10;
+      fMCTrkQ1 = -10;
+      fMCTrkQ2 = -10;
       fAnaTreeMC->Fill();
       PostData(3, fAnaTreeMC);
 
@@ -497,6 +509,12 @@ void AliAnalysisTaskNanoJPsi2016Fwd::GetMCInfo()
       fMCTildePhiHEneg  = -999;
       fMCTildePhiCSpos  = -999;
       fMCTildePhiCSneg  = -999;
+      fMCTrkEta1 = -10;
+      fMCTrkEta2 = -10;
+      fMCTrkPhi1 = -10;
+      fMCTrkPhi2 = -10;
+      fMCTrkQ1 = -10;
+      fMCTrkQ2 = -10;
       fAnaTreeMC->Fill();
       PostData(3, fAnaTreeMC);
       return;
@@ -576,6 +594,12 @@ void AliAnalysisTaskNanoJPsi2016Fwd::GetMCInfo()
     fMCTildePhiHEneg  = -999;
     fMCTildePhiCSpos  = -999;
     fMCTildePhiCSneg  = -999;
+    fMCTrkEta1 = -10;
+    fMCTrkEta2 = -10;
+    fMCTrkPhi1 = -10;
+    fMCTrkPhi2 = -10;
+    fMCTrkQ1 = -10;
+    fMCTrkQ2 = -10;
 
   }
 
@@ -608,6 +632,12 @@ void AliAnalysisTaskNanoJPsi2016Fwd::UserExec(Option_t *)
   fTrkTrkPhi = -10;
   fTrkTrkY = -10;
   fTrkTrkM = -10;
+  fTrkEta1 = -10;
+  fTrkEta2 = -10;
+  fTrkPhi1 = -10;
+  fTrkPhi2 = -10;
+  fTrkQ1 = -10;
+  fTrkQ2 = -10;
 
 
   // get AOD event
